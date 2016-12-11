@@ -1,0 +1,50 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+.Login {
+  min-height: 100%;
+  text-align: center;
+  background: url("../media/header.jpg") center;
+  background-size: cover;
+}
+.Login-modal {
+  width: 300px;
+  height: 200px;
+  position: absolute;
+  top: 180px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: white;
+  border-radius: 5px;
+}
+.Login-form{
+  padding: 20px;
+}
+.LoginIcon{
+  width: 25px;
+  height: 25px;
+}
+.Login .LoginBtn{
+  width: 100%;
+  border-radius: 0 0 5px 5px;
+  font-size: 20px;
+  background: #F05F40;
+  border: 0;
+  color: white;
+  text-shadow: none;
+}
+.Login-logo{
+  margin-top: -28px;
+  background-color: #F05F40;
+  border-radius: 50%;
+  border: 10px;
+}
+.Login .Login-modal .Login-form input{
+  border: none;
+  border-bottom: 1px solid #ccc;
+  border-radius: 0;
+  box-shadow: none;
+  padding: 6px 10px;
+}
