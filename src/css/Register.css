@@ -1,19 +1,12 @@
-html, body, #root {
-  height: 100%;
-  margin: 0;
-}
-html *[class^='ant'], .Login-rememberMe {
-  font-size: 14px !important;
-}
-.Login {
+.Register {
   min-height: 100%;
   text-align: center;
   background: url("../media/header.jpg") center;
   background-size: cover;
 }
-.Login-modal {
+.Register-modal {
   width: 300px;
-  height: 320px;
+  height: 440px;
   position: absolute;
   top: 180px;
   left: 0;
@@ -22,14 +15,14 @@ html *[class^='ant'], .Login-rememberMe {
   background-color: white;
   border-radius: 5px;
 }
-.Login-form{
+.Register-form{
   padding: 0 20px 20px;
 }
-.LoginIcon{
+.RegisterIcon{
   width: 25px;
   height: 25px;
 }
-.Login .LoginBtn{
+.Register .RegisterBtn{
   width: 100%;
   border-radius: 0 0 5px 5px;
   font-size: 20px;
@@ -38,18 +31,15 @@ html *[class^='ant'], .Login-rememberMe {
   color: white;
   text-shadow: none;
 }
-.Login-logo{
+.Register-logo{
   margin-top: -28px;
   background-color: #F05F40;
   border-radius: 50%;
   border: 10px;
 }
-.Login-form-forgot {
-  float: right;
-}
-.Login-form-button {
+.Register-form-button{
   width: 100%;
 }
-.Login-rememberMe {
-  float: left;
+.Register .Register-form .Register-agrement{
+  margin-bottom: 5px;
 }

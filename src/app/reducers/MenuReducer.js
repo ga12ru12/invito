@@ -1,5 +1,5 @@
 import { ADD_FOOD, REMOVE_FOOD, SOLD_OUT_FOOD, AVAILABLE_FOOD, FOOD_STATUS } from '../actions/MenuAction';
-import { List, Map } from 'immutable';
+import { Map } from 'immutable';
 
 function menu(state = [], action){
   switch (action.type){

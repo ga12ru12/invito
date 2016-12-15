@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import { Link } from 'react-router';
 import { Button, Form, Input, Checkbox, Icon } from 'antd';
 import FontAwesome from 'react-fontawesome';
 import '../../css/Login.css';
@@ -41,15 +42,15 @@ const NormalLoginForm = Form.create()(React.createClass({
           })(
             <Checkbox className="Login-rememberMe">Remember me</Checkbox>
           )}
-          <a className="login-form-forgot">Forgot password</a>
+          <a className="Login-form-forgot">Forgot password</a>
         </div>
         <div>
-          <Button type="primary" htmlType="submit" className="login-form-button">
+          <Button type="primary" htmlType="submit" className="Login-form-button">
             Log in
           </Button>
         </div>
         <div>
-          Or <a>register now!</a>
+          Or <Link to="/register">register now!</Link>
         </div>
         </FormItem>
       </Form>
@@ -75,6 +76,7 @@ class Login extends PureComponent {
       <div className="Login">
         <div className="Login-modal">
           <FontAwesome name='user-circle-o' size='4x' className="Login-logo" inverse={true}/>
+          <div className="markdown"><h1>Login</h1></div>
           <NormalLoginForm onSubmit={this.props.onSubmit}/>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import Login from './containers/Login';
+import Register from './containers/Register';
 import Home from './containers/Home';
 import Dashboard from './containers/Dashboard';
 import Orders from './containers/Orders';
@@ -17,6 +18,7 @@ class App extends Component {
       <Route path="/">
         <IndexRoute component={Home} onEnter={this.authenHandler}/>
         <Route path="login" component={Login}/>
+        <Route path="/register" component={Register}/>
         <Route path="dashboard" component={Dashboard} onEnter={this.authenHandler}/>
         <Route path="orders" component={Orders} onEnter={this.authenHandler}/>
         <Route path="kitchen" component={Kitchen} onEnter={this.authenHandler}/>
