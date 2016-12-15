@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Button, Form, Input, Checkbox, Icon, Select } from 'antd';
+import { Button, Form, Input, Checkbox, Icon } from 'antd';
 import FontAwesome from 'react-fontawesome';
 import '../../css/Register.css';
 const FormItem = Form.Item;

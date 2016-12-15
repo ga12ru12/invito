@@ -1,27 +1,25 @@
 import React, { PureComponent } from 'react';
-import { Navbar, Nav, NavItem} from 'react-bootstrap';
+import { Menu, Icon } from 'antd';
 import { Link } from 'react-router';
-import '../../css/components/HomeMenu.css'
+const SubMenu = Menu.SubMenu;
+const MenuItemGroup = Menu.ItemGroup;
 
 class HomeMenu extends PureComponent {
   render() {
     return (
-      <Navbar inverse={true} className="HomeMenu">
-        <Navbar.Header>
-          <Navbar.Brand>
-            <Link to="/">Restaurant</Link>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <NavItem componentClass={Link} href="/dashboard" to="/dashboard">Dashboard</NavItem>
-            <NavItem componentClass={Link} href="/orders" to="/orders">Orders</NavItem>
-            <NavItem componentClass={Link} href="/kitchen" to="/kitchen">Kitchen</NavItem>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    );
+      <Menu mode="horizontal">
+        <SubMenu title={<span><Icon type="setting" />Quang.Hoang</span>}>
+          <MenuItemGroup title="Item 1">
+            <Menu.Item key="setting:1">Option 1</Menu.Item>
+            <Menu.Item key="setting:2">Option 2</Menu.Item>
+          </MenuItemGroup>
+          <MenuItemGroup title="Item 2">
+            <Menu.Item key="setting:3">Option 3</Menu.Item>
+            <Menu.Item key="setting:4">Option 4</Menu.Item>
+          </MenuItemGroup>
+        </SubMenu>
+      </Menu>
+    )
   }
 }
 
