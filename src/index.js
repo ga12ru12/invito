@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import restaurantApp from './app/reducers/index';
 import App from './app/App';
-import 'antd/dist/antd.css';
+import './css/antd-custom/antd.min.css';
 import './lib/font-awesome-4.7.0/css/font-awesome.min.css';
 import './css/antd-custom/index.css';
 import './css/index.css';
