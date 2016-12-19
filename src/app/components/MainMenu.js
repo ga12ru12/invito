@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { Menu, Icon } from 'antd';
 import { Link } from 'react-router';
-import '../../css/components/HomeMenu.css';
+import '../../css/components/MainMenu.css';
 import logo from '../../media/icon.jpg';
 const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;

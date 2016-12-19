@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import HomeMenu from './HomeMenu';
+import HomeMenu from './MainMenu';
 
 class Orders extends PureComponent{
   render(){

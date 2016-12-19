@@ -1,20 +1,24 @@
-import React, { Component } from 'react';
-import HomeMenu from '../components/HomeMenu';
-import '../../css/Home.css';
+import { connect } from 'react-redux';
+import { loginAction } from '../actions/LoginAction';
+import HomeComponent from '../components/HomeComponent';
 
-class Home extends Component {
-  render() {
-    return (
-      <div className="Home">
-        <div className="Home-header">
-          <HomeMenu />
-        </div>
-        <p className="Home-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+const mapStateToProps = (state, ownProps) => {
+  return {
+    userStatus: state.loginState.USER_STATUS
   }
 }
+
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    onSubmit: (username, password) => {
+      dispatch(loginAction(username, password));
+    }
+  }
+}
+
+const Home = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(HomeComponent);
 
 export default Home;

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import HomeMenu from  '../components/HomeMenu';
+import HomeMenu from  '../components/MainMenu';
 
 class Dashboard extends Component{
   render() {

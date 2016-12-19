@@ -29,10 +29,9 @@ class App extends Component {
   authenHandler(nextState, replace, callback) {
     const {getState} = this.props;
     const state = getState();
-    console.log(state);
-    if(state.loginState.USER_STATUS === USER_STATUS.ANONYMOUS){
-      replace('/login');
-    }
+    // if(state.loginState.USER_STATUS === USER_STATUS.ANONYMOUS){
+    //   replace('/login');
+    // }
     callback();
   }
 
