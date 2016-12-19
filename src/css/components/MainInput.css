@@ -22,3 +22,6 @@
   float: right;
   cursor: pointer;
 }
+.ant-steps-step {
+  text-align: initial;
+}
