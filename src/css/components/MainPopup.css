@@ -1,0 +1,35 @@
+.popup-content, .popup-step{
+  height: 450px;
+  padding: 10px 15px;
+}
+.popup-content{
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.popup-step{
+  box-shadow: -10px 0px 15px -1px rgba(0,0,0,0.08);
+}
+.popup-step .popup-step-body{
+  text-align: center;
+}
+.popup-content .popup-body .title, .popup-step .popup-step-title{
+  margin-top: 15px;
+}
+.popup-content .popup-body{
+  height: 350px;
+}
+.popup-content .popup-footer{
+  float: right;
+}
+.popup-content .popup-footer button{
+  margin-left: 10px;
+}
+.popup-step .ant-steps-head-inner{
+  margin-right: 0 !important;
+}
+.popup-step .popup-step-body {
+  margin-top: 50px;
+}
+.popup-step .popup-step-body .anticon{
+  font-size: 50px !important;
+}
