@@ -1,6 +1,25 @@
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { loginAction } from '../actions/LoginAction';
-import HomeComponent from '../components/HomeComponent';
+import MainMenu from '../components/MainMenu';
+import MainInput from '../components/MainInput';
+import '../../css/Home.css';
+
+class HomeContainer extends Component {
+  componentWillMount() {}
+  
+  render() {
+    return (
+      <div className="Home">
+        <div className="Home-header">
+          <MainMenu />
+        </div>
+        <div className="Home-body">
+          <MainInput />
+        </div>
+      </div>
+    )
+  }
+}
 
 const mapStateToProps = (state, ownProps) => {
   return {
@@ -8,17 +27,8 @@ const mapStateToProps = (state, ownProps) => {
   }
 }
 
-const mapDispatchToProps = (dispatch, ownProps) => {
-  return {
-    onSubmit: (username, password) => {
-      dispatch(loginAction(username, password));
-    }
-  }
-}
-
 const Home = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(HomeComponent);
+  mapStateToProps
+)(HomeContainer);
 
 export default Home;

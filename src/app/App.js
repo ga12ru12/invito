@@ -6,7 +6,7 @@ import Home from './containers/Home';
 import Dashboard from './containers/Dashboard';
 import Orders from './containers/Orders';
 import Kitchen from './containers/Kitchen';
-import { USER_STATUS } from './actions/LoginAction';
+// import { USER_STATUS } from './actions/LoginAction';
 
 class App extends Component {
   constructor() {
@@ -27,8 +27,8 @@ class App extends Component {
   }
   
   authenHandler(nextState, replace, callback) {
-    const {getState} = this.props;
-    const state = getState();
+    // const {getState} = this.props;
+    // const state = getState();
     // if(state.loginState.USER_STATUS === USER_STATUS.ANONYMOUS){
     //   replace('/login');
     // }

@@ -11,7 +11,7 @@ class HomeMenu extends PureComponent {
     return (
       <div className="main-menu">
         <Link to="/">
-          <img src={logo} className="logo-icon"/>
+          <img src={logo} className="logo-icon" role="presentation"/>
           <span className="title-menu">Invito</span>
         </Link>
         <Menu mode="horizontal">
