@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MainMenu from '../components/MainMenu';
-import { Steps, Button, message, Row, Col, Icon, Tooltip, Switch } from 'antd';
+import { Steps, Button, message, Row, Col, Icon, Tooltip, Switch, Input } from 'antd';
 const Step = Steps.Step;
+const Search = Input.Search;
 import '../../css/Home.css';
 import '../../css/components/MainInput.css'
 import '../../css/components/MainPopup.css';
@@ -95,9 +96,35 @@ class HomeContainer extends Component {
           <section className="markdown">
             <h2 className="title">Choose location</h2>
           </section>
-          <div>
-            <div>
-              <Switch checkedChildren={'Add new location'} unCheckedChildren={'Choose exist location'} />
+          <div className="content-main">
+            <div className="content-choose-address">
+              <Search placeholder="input search text" onSearch={value => console.log(value)} className="search-address"/>
+              <div className="list-address">
+                <div className="address-detail">
+                  <div className="address-title">Enouvo</div>
+                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                </div>
+                <div className="address-detail">
+                  <div className="address-title">Enouvo</div>
+                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                </div>
+                <div className="address-detail">
+                  <div className="address-title">Enouvo</div>
+                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                </div>
+                <div className="address-detail">
+                  <div className="address-title">Enouvo</div>
+                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                </div>
+                <div className="address-detail">
+                  <div className="address-title">Enouvo</div>
+                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                </div>
+              </div>
+            </div>
+            <div className="content-divider"></div>
+            <div className="content-add-new-address">
+
             </div>
           </div>
         </div>
