@@ -21,7 +21,12 @@ class HomeContainer extends Component {
     super(props);
     this.state = {
       current: 0,
-      isDefault: true
+      isDefault: true,
+      location: {
+        isNew: false,
+        name: '',
+        latlng: []
+      }
     };
   }
 
@@ -42,10 +47,31 @@ class HomeContainer extends Component {
     const current = this.state.current - 1;
     this.setState({ current });
   }
+
+  emitEmpty = () => {
+    this.newLocationInput.focus();
+    this.setState({
+      location: {
+        isNew: false,
+        name: '',
+        latlng: []
+      }
+    });
+  }
+  onChangeNewLocation = (e) => {
+    this.setState({
+      location: {
+        isNew: true,
+        name: e.target.value,
+        latlng: []
+      }
+    });
+  }
   
   render() {
     // Main Popup
-    const { current } = this.state;
+    const { current, location } = this.state;
+    const suffix = (location.isNew && location.name) ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null;
     const stepContent = [
       (
         <div className="content-step-1">
@@ -94,11 +120,11 @@ class HomeContainer extends Component {
       (
         <div className="content-body-1">
           <section className="markdown">
-            <h2 className="title">Choose location</h2>
+            <h2 className="title">Choose exist location</h2>
           </section>
           <div className="content-main">
             <div className="content-choose-address">
-              <Search placeholder="input search text" onSearch={value => console.log(value)} className="search-address"/>
+              <Input placeholder="Search location" className="search-address"/>
               <div className="list-address">
                 <div className="address-detail">
                   <div className="address-title">Enouvo</div>
@@ -122,9 +148,14 @@ class HomeContainer extends Component {
                 </div>
               </div>
             </div>
-            <div className="content-divider"></div>
+            <div className="content-divider">
+              <span>Or</span>
+            </div>
             <div className="content-add-new-address">
-
+              <section className="markdown">
+                <h2 className="title">Add new location</h2>
+              </section>
+              <Input placeholder="Location Name" className="search-address"/>
             </div>
           </div>
         </div>
