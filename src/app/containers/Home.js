@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MainMenu from '../components/MainMenu';
-import { Steps, Button, message, Row, Col, Icon, Tooltip, Switch, Input } from 'antd';
+import { Steps, Button, message, Row, Col, Icon, Tooltip, Switch, Select, Input, Form } from 'antd';
 const Step = Steps.Step;
-const Search = Input.Search;
+const FormItem = Form.Item;
+const Option = Select.Option;
 import '../../css/Home.css';
 import '../../css/components/MainInput.css'
 import '../../css/components/MainPopup.css';
@@ -15,6 +16,59 @@ const steps = [{
 }, {
   title: '3'
 }];
+
+const AddInviteeForm = Form.create()(React.createClass({
+  render(){
+    const { getFieldDecorator } = this.props.form;
+    const formItemLayout = {
+      labelCol: { span: 6 },
+      wrapperCol: { span: 18 },
+    };
+    const prefixSelector = getFieldDecorator('prefix', {
+      initialValue: '84',
+    })(
+      <Select className="icp-selector">
+        <Option value="84">+84</Option>
+      </Select>
+    );
+
+    return(
+      <div>
+        <FormItem
+          {...formItemLayout}
+          label="Name"
+          hasFeedback
+        >
+          {getFieldDecorator('name', {
+            rules: [{
+              required: true, message: "Please input invitee's name!",
+            }],
+          })(
+            <Input />
+          )}
+        </FormItem>
+        <FormItem
+          {...formItemLayout}
+          label="Phone"
+        >
+          {getFieldDecorator('phone', {
+            rules: [{ required: true, message: "Please input invitee's phone!" }],
+          })(
+            <Input addonBefore={prefixSelector} />
+          )}
+        </FormItem>
+        <Row>
+          <Col span={12}>
+            <Button type="primary">Add</Button>
+          </Col>
+          <Col span={12}>
+            <Button type="primary">Add</Button>
+          </Col>
+        </Row>
+      </div>
+    )
+  }
+}))
 
 class HomeContainer extends Component {
   constructor(props) {
@@ -72,6 +126,7 @@ class HomeContainer extends Component {
     // Main Popup
     const { current, location } = this.state;
     const suffix = (location.isNew && location.name) ? <Icon type="close-circle" onClick={this.emitEmpty} /> : null;
+
     const stepContent = [
       (
         <div className="content-step-1">
@@ -119,32 +174,34 @@ class HomeContainer extends Component {
     const bodyContent = [
       (
         <div className="content-body-1">
-          <section className="markdown">
-            <h2 className="title">Choose exist location</h2>
-          </section>
           <div className="content-main">
             <div className="content-choose-address">
-              <Input placeholder="Search location" className="search-address"/>
-              <div className="list-address">
-                <div className="address-detail">
-                  <div className="address-title">Enouvo</div>
-                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
-                </div>
-                <div className="address-detail">
-                  <div className="address-title">Enouvo</div>
-                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
-                </div>
-                <div className="address-detail">
-                  <div className="address-title">Enouvo</div>
-                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
-                </div>
-                <div className="address-detail">
-                  <div className="address-title">Enouvo</div>
-                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
-                </div>
-                <div className="address-detail">
-                  <div className="address-title">Enouvo</div>
-                  <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+              <section className="markdown">
+                <h2 className="title">Choose exist location</h2>
+              </section>
+              <div className="content-display">
+                <Input placeholder="Search location" className="search-address"/>
+                <div className="list-address">
+                  <div className="address-detail">
+                    <div className="address-title">Enouvo</div>
+                    <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                  </div>
+                  <div className="address-detail">
+                    <div className="address-title">Enouvo</div>
+                    <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                  </div>
+                  <div className="address-detail">
+                    <div className="address-title">Enouvo</div>
+                    <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                  </div>
+                  <div className="address-detail">
+                    <div className="address-title">Enouvo</div>
+                    <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                  </div>
+                  <div className="address-detail">
+                    <div className="address-title">Enouvo</div>
+                    <div className="address-location">84 Cao Xuan Duc, Da Nang</div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -155,7 +212,9 @@ class HomeContainer extends Component {
               <section className="markdown">
                 <h2 className="title">Add new location</h2>
               </section>
-              <Input placeholder="Location Name" className="search-address"/>
+              <div className="content-display">
+                <Input placeholder="Location Name" className="search-address"/>
+              </div>
             </div>
           </div>
         </div>
@@ -163,11 +222,11 @@ class HomeContainer extends Component {
       (
         <div className="content-body-2">
           <section className="markdown">
-            <h2 className="title">Choose location</h2>
+            <h2 className="title">Add invitee</h2>
           </section>
-          <div>
+          <div className="content-main content-display">
             <div>
-              <Switch checkedChildren={'Add new location'} unCheckedChildren={'Choose exist location'} />
+              <AddInviteeForm/>
             </div>
           </div>
         </div>
