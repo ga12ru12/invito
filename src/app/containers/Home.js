@@ -210,12 +210,9 @@ class HomeContainer extends Component {
               <span>Or</span>
             </div>
             <div className="content-add-new-address">
-              <section className="markdown">
-                <h2 className="title">Add new location</h2>
-              </section>
-              <div className="content-display">
-                <Input placeholder="Location Name" className="search-address"/>
-              </div>
+                <div className="content-display">
+                    <Button type="dashed" className="addNewAdressBtn">Add New Address</Button>
+                </div>
             </div>
           </div>
         </div>
@@ -283,7 +280,7 @@ class HomeContainer extends Component {
                 </div>
               </div>
             </div>
-            <div>You've invite Hoang Dang Quang and 4 other friends....</div>
+            <div className="total-div">You've invite Hoang Dang Quang and 4 other friends....</div>
           </div>
         </div>
       ),

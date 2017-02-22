@@ -9,8 +9,14 @@
   margin-top: 5px;
   border: #d9d9d9 solid thin;
   border-radius: 5px;
-  max-height: 120px;
+  max-height: 160px;
   overflow: auto;
+}
+.content-add-new-address{
+  margin-top: 5px;
+}
+.addNewAdressBtn{
+  width: 100%;
 }
 .address-detail{
   padding: 10px;
@@ -48,9 +54,7 @@
   width: 9999px;
   /* Here is the modification */
   height: 5px; /* space between lines */
-  margin-top: -2px; /* adjust vertical align */
   border-top: 1px solid #8ED6BD;
-  border-bottom: 1px solid #8ED6BD;
 }
 
 .content-divider > span:before {
@@ -66,20 +70,21 @@
 /******* CSS Step 2 ********/
 .content-body-2 .groupBtn{
   width: 100%;
+  margin-bottom: 5px;
 }
 .content-body-2 .groupBtn button{
   width: 50%;
 }
-.list-invitee {
+.content-body-2 .list-invitee {
   margin-top: 5px;
   border: #d9d9d9 solid thin;
   border-radius: 5px;
-  max-height: 200px;
+  max-height: 180px;
   overflow: auto;
   background-color: #d9d9d9;
   padding: 5px 0;
 }
-.invitee-info {
+.content-body-2 .invitee-info {
   float: left;
   width: 48%;
   padding: 5px 2px;
@@ -87,13 +92,19 @@
   border-radius: 5px;
   margin: 1%;
 }
-.img-div {
+.content-body-2 .img-div {
   float: left;
 }
-.img-div img {
+.content-body-2 .img-div img {
   width: 40px;
   display: block;
 }
-.invitee-detail {
+.content-body-2 .invitee-detail {
   margin-top: 2px;
+}
+.content-body-2 .invitee-name, .content-body-2 .invitee-phone{
+  font-size: 12px;
+}
+.content-body-2 .total-div{
+  margin-top: 15px;
 }
