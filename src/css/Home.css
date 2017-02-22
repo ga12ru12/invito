@@ -62,3 +62,38 @@
   left: 100%;
   margin-left: 15px;
 }
+
+/******* CSS Step 2 ********/
+.content-body-2 .groupBtn{
+  width: 100%;
+}
+.content-body-2 .groupBtn button{
+  width: 50%;
+}
+.list-invitee {
+  margin-top: 5px;
+  border: #d9d9d9 solid thin;
+  border-radius: 5px;
+  max-height: 200px;
+  overflow: auto;
+  background-color: #d9d9d9;
+  padding: 5px 0;
+}
+.invitee-info {
+  float: left;
+  width: 48%;
+  padding: 5px 2px;
+  background-color: white;
+  border-radius: 5px;
+  margin: 1%;
+}
+.img-div {
+  float: left;
+}
+.img-div img {
+  width: 40px;
+  display: block;
+}
+.invitee-detail {
+  margin-top: 2px;
+}

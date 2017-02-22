@@ -6,8 +6,9 @@ const Step = Steps.Step;
 const FormItem = Form.Item;
 const Option = Select.Option;
 import '../../css/Home.css';
-import '../../css/components/MainInput.css'
+import '../../css/components/MainInput.css';
 import '../../css/components/MainPopup.css';
+import defaultUserIcon from "../../media/default-user.svg";
 
 const steps = [{
   title: '1'
@@ -226,8 +227,63 @@ class HomeContainer extends Component {
           </section>
           <div className="content-main content-display">
             <div>
-              <AddInviteeForm/>
+              <Button.Group className="groupBtn">
+                <Button type="dashed">
+                  Choose invitee
+                </Button>
+                <Button type="dashed">
+                  Add new
+                </Button>
+              </Button.Group>
             </div>
+            <div className="list-invitee">
+              <div className="invitee-info">
+                <div className="img-div">
+                  <img src={defaultUserIcon} className="default-user-icon" role="presentation"/>
+                </div>
+                <div className="invitee-detail">
+                  <div className="invitee-name">Hoàng Đăng Quang</div>
+                  <div className="invitee-phone">+84976 112 600</div>
+                </div>
+              </div>
+              <div className="invitee-info">
+                <div className="img-div">
+                  <img src={defaultUserIcon} className="default-user-icon" role="presentation"/>
+                </div>
+                <div className="invitee-detail">
+                  <div className="invitee-name">Hoàng Đăng Quang</div>
+                  <div className="invitee-phone">+84976 112 600</div>
+                </div>
+              </div>
+              <div className="invitee-info">
+                <div className="img-div">
+                  <img src={defaultUserIcon} className="default-user-icon" role="presentation"/>
+                </div>
+                <div className="invitee-detail">
+                  <div className="invitee-name">Hoàng Đăng Quang</div>
+                  <div className="invitee-phone">+84976 112 600</div>
+                </div>
+              </div>
+              <div className="invitee-info">
+                <div className="img-div">
+                  <img src={defaultUserIcon} className="default-user-icon" role="presentation"/>
+                </div>
+                <div className="invitee-detail">
+                  <div className="invitee-name">Hoàng Đăng Quang</div>
+                  <div className="invitee-phone">+84976 112 600</div>
+                </div>
+              </div>
+              <div className="invitee-info">
+                <div className="img-div">
+                  <img src={defaultUserIcon} className="default-user-icon" role="presentation"/>
+                </div>
+                <div className="invitee-detail">
+                  <div className="invitee-name">Hoàng Đăng Quang</div>
+                  <div className="invitee-phone">+84976 112 600</div>
+                </div>
+              </div>
+            </div>
+            <div>You've invite Hoang Dang Quang and 4 other friends....</div>
           </div>
         </div>
       ),
