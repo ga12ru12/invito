@@ -28,7 +28,10 @@
   margin-right: 0 !important;
 }
 .popup-step .popup-step-body {
-  margin-top: 50px;
+  margin-top: 80px;
+}
+.popup-step .popup-step-body .title {
+  margin-top: 40px;
 }
 .popup-step .popup-step-body .anticon{
   font-size: 50px !important;

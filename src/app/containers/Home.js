@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import MainMenu from '../components/MainMenu';
-import { Steps, Button, message, Row, Col, Icon, Tooltip, Switch, Select, Input, Form } from 'antd';
+import { Steps, Button, message, Row, Col, Icon, Tooltip, DatePicker, Select, Input, Form } from 'antd';
 const Step = Steps.Step;
 const FormItem = Form.Item;
 const Option = Select.Option;
+const InputGroup = Input.Group;
 import '../../css/Home.css';
 import '../../css/components/MainInput.css';
 import '../../css/components/MainPopup.css';
@@ -67,6 +68,68 @@ const AddInviteeForm = Form.create()(React.createClass({
           </Col>
         </Row>
       </div>
+    )
+  }
+}))
+
+const MoreInfoForm = Form.create()(React.createClass({
+  render(){
+    const { getFieldDecorator } = this.props.form;
+    const formItemLayout = {
+      labelCol: { span: 9 },
+      wrapperCol: { span: 15 },
+    };
+
+    function disabledDate(current) {
+      return current && current.valueOf() < Date.now();
+    }
+
+    return (
+      <Form>
+        <FormItem label="Chairman" {...formItemLayout} hasFeedback>
+          {getFieldDecorator('chairman', {
+            rules: [{
+              required: true, message: 'Please input the chairman!',
+            }],
+          })(
+            <Input />
+          )}
+        </FormItem>
+        <FormItem label="Phone Number" {...formItemLayout} >
+          {getFieldDecorator('phone', {
+            rules: [{ required: true, message: "Please input chairman's phone number!" }],
+          })(
+            <InputGroup size="large">
+              <Col span="8">
+                <Input defaultValue="+84" />
+              </Col>
+              <Col span="16">
+                <Input/>
+              </Col>
+            </InputGroup>
+          )}
+        </FormItem>
+        <FormItem label="Time" {...formItemLayout} hasFeedback>
+          {getFieldDecorator('time', {
+            rules: [{
+              required: true, message: 'Please select the time of invitation!',
+            }],
+          })(
+            <DatePicker
+              showTime
+              disabledDate={disabledDate}
+              format="HH:mm:ss DD/MM/YYYY"
+              placeholder="Select Time"
+            />
+          )}
+        </FormItem>
+        <FormItem label="Title" {...formItemLayout} hasFeedback>
+          <Input />
+        </FormItem>
+        <FormItem label="Note" {...formItemLayout} hasFeedback>
+          <Input type="textarea" rows={2}/>
+        </FormItem>
+      </Form>
     )
   }
 }))
@@ -287,12 +350,10 @@ class HomeContainer extends Component {
       (
         <div className="content-body-3">
           <section className="markdown">
-            <h2 className="title">Choose location</h2>
+            <h2 className="title">More Infomation</h2>
           </section>
-          <div>
-            <div>
-              <Switch checkedChildren={'Add new location'} unCheckedChildren={'Choose exist location'} />
-            </div>
+          <div className="content-main content-display">
+            <MoreInfoForm />
           </div>
         </div>
       )

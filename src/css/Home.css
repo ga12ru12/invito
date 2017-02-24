@@ -96,8 +96,10 @@
   float: left;
 }
 .content-body-2 .img-div img {
-  width: 40px;
+  width: 36px;
   display: block;
+  margin: 1px 3px 0 2px;
+  border-radius: 4px;
 }
 .content-body-2 .invitee-detail {
   margin-top: 2px;
@@ -107,4 +109,9 @@
 }
 .content-body-2 .total-div{
   margin-top: 15px;
+}
+
+/******* CSS Step 3 ********/
+.content-body-3 .ant-calendar-picker{
+  width: 100%;
 }
