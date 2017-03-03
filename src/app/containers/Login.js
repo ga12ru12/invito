@@ -83,7 +83,9 @@ class LoginContainer extends Component {
               <div className="Login-modal">
                 <FontAwesome name='user-circle-o' size='4x' className="Login-logo" inverse={true}/>
                 <div className="markdown"><h1>Login</h1></div>
-                <NormalLoginForm onSubmit={this.onSubmit}/>
+                  <div className="Login-form">
+                      <div className="fb-login-button" data-max-rows="2" data-size="large" data-show-faces="false" data-auto-logout-link="true"></div>
+                  </div>
               </div>
             </div>
         );
