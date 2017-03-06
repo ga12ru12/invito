@@ -6,11 +6,13 @@ import Home from './containers/Home';
 import Dashboard from './containers/Dashboard';
 import Orders from './containers/Orders';
 import Kitchen from './containers/Kitchen';
-import { USER_STATUS, initFB } from './actions/LoginAction';
+import { USER_STATUS } from './actions/LoginAction';
+import { initParse } from './ultis/Parse';
 
 class App extends Component {
   constructor() {
     super();
+    initParse();
 
     this.authenHandler = this.authenHandler.bind(this);
 
@@ -26,8 +28,8 @@ class App extends Component {
     );
   }
 
-  componentDidMount(){
-    initFB();
+  componentWillMount(){
+
   }
   
   authenHandler(nextState, replace, callback) {
