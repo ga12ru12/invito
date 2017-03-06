@@ -3,6 +3,7 @@ import {Parse} from 'parse';
 // Initialize Parse
 export function initParse(){
   Parse.initialize(process.env.REACT_APP_PARSE_APPLICATION_ID, process.env.REACT_APP_PARSE_JAVASCRIPT_KEY);
+  Parse.serverURL = process.env.REACT_APP_PARSE_SERVER_URL;
 }
 
 export function initFB(){
